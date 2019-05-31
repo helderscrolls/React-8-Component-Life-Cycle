@@ -7,16 +7,44 @@ class MyForm extends Component {
     globalTitle: ''
   }
 
-  render() {
-    return (
-      <div>
-        <form onSubmit={this.submitForm}>
-          <input 
-            type="textarea"
-            name="comment"
-          />
+  onChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  }
 
-        <input type="submit" value="Envoyer"/>
+  componentDidMount() {
+    console.log("Formulaire Rendu")
+  }
+
+  submitForm = (event) => {
+    event.preventDefault()
+    this.setState({ globalTitle: `Mon formulaire - ${this.state.title}` })
+  }
+
+  componentDidUpdate() {
+    console.log("Titre Changé")
+  }
+
+  render() {
+
+    return (
+      <div className="Form">
+        <form onSubmit={this.submitForm}>
+          <fieldset>
+            <input
+              type="text"
+              id="title"
+              name="title"
+              onChange={this.onChange}
+              value={this.state.title}
+            />
+
+            <hr />
+            <input
+              type="submit"
+              value="Envoyer" />
+          </fieldset>
         </form>
       </div>
     )
