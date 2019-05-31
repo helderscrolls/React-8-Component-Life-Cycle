@@ -4,7 +4,7 @@ import './MyForm.css'
 class MyForm extends Component {
   state = {
     title: '',
-    globalTitle: ''
+    globalTitle: 'Mon formulaire'
   }
 
   onChange = (e) => {
@@ -30,12 +30,14 @@ class MyForm extends Component {
 
     return (
       <div className="Form">
+        <h1>{this.state.globalTitle}</h1>
         <form onSubmit={this.submitForm}>
           <fieldset>
             <input
               type="text"
               id="title"
               name="title"
+              placeholder="Ecrivez votre titre ici"
               onChange={this.onChange}
               value={this.state.title}
             />
