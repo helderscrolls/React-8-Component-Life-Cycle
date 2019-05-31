@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Netlify [Run the App](https://goofy-swartz-af374e.netlify.com).
 
 ## Available Scripts
 
